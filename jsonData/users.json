@@ -1,8 +1,28 @@
 
 {
+ "users" : [
+    {
   "id" : 1,
-  "First Name":"omri",
-  "Last Name": "shooshan",
+  "FirstName":"omri",
+  "LastName": "shooshan",
   "CreatedDate": "5/19/2020",
   "SessionTimeOut" : 240
+    },
+    {
+      "id" : 2,
+      "FirstName":"maor",
+      "LastName": "zigdon",
+      "CreatedDate": "5/19/2010",
+      "SessionTimeOut" : 120
+        },
+        {
+          "id" : 3,
+          "FirstName":"yaniv",
+          "LastName": "sharabi",
+          "CreatedDate": "5/10/2010",
+          "SessionTimeOut" : 60
+            }
+
+
+  ]
 }

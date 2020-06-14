@@ -1,7 +1,20 @@
 
 
 {
-    "id": 1,
-    "Permissions": ["View Subscription","Create Subscriptions","Delete Subscriptions","View Movies","Create Movies","Delete Movies"]
+    "permissions": [
+        {
+        "id": 1,
+        "Permissions": ["View Subscription","Create Subscriptions","Delete Subscriptions","View Movies","Create Movies","Delete Movies"]
+        },
+        {
+        "id": 2,
+        "Permissions": ["Create Subscriptions","Delete Subscriptions","View Movies","Delete Movies"]
+        },
+        {
+        "id": 3,
+        "Permissions": ["Create Subscriptions","Delete Subscriptions"]
+        }
+    ]
+
 
 } 

@@ -10,7 +10,7 @@ var loginRouter= require('./routes/login')
 var mainRouter = require ('./routes/main')
 var moviesRouter = require ('./routes/movies')
 var subscriptionsRouter= require('./routes/subsciptions')
-
+require('./config/database')
 //var expressLayouts = require('express-ejs-layouts')
 
 var app = express();

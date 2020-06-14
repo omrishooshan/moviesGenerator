@@ -1,0 +1,31 @@
+<html>
+    <head>
+        </head>
+        <body>
+            <h1>edit user page</h1>
+            <form action="#">
+               FirstName: <input type="text" value="<%=data.FirstName %>"/><br/>
+               LastName:<input type="text" value="<%=data.LastName %>"/><br/>
+               CreatedDate:<input type="text" value="<%=data.CreatedDate %>"><br/>
+               SessionTimeOut:<input type="text" value="<%=data.SessionTimeOut %>"><br/>
+               Permissions:
+                   <input type="checkbox" >View Subscription
+                   <input type="checkbox"  > Create Subscriptions
+                   <input type="checkbox"  >Delete Subscriptions
+                   <input type="checkbox"  >View Movies
+                   <input type="checkbox"  >Create Movies
+                   <input type="checkbox"  >Delete Movies
+                  
+             
+               <div>
+               <input type="submit" value="Update">
+               <a href="#" value="Go back">Go Back</a>
+               
+               </div>
+              </form>
+
+          
+      
+            </body>
+    </html>
+

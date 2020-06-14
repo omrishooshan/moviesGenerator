@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            .userDetails{
+                border: 1px solid black
+            }
+             li{
+                 text-decoration: none;
+             }
+             ul {
+    list-style-type: none;
+}
+.b{
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: darkgray;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 3px;
+}
+.b:hover{
+    background: dimgray;
+}
+.mybuttons{
+    display:flex;
+}
+            </style>
+        </head>
+        
+<body>
+<%- include('usersPage') %>
+
+<h1>this is all users page</h1>
+<ul>
+<% userData.users.forEach(function(item){ %>
+    <div class="userDetails">
+<li>Id: &nbsp; <%= item.id%></li>
+<li>FirstName: &nbsp;<%= item.FirstName%></li>
+<li>LastName: &nbsp;<%= item.LastName%></li>
+<li>CreatedDate: &nbsp;<%= item.CreatedDate%></li>
+<li>SessionTimeOut:&nbsp;<%= item.SessionTimeOut%></li>
+<div class="mybuttons">
+<a href="editUser/?id=<%= item.id %>" class="b">Edit</a>
+<a href="#" class="b">Delete</a>
+</div>
+
+</div>
+<% }) %>
+</ul>
+</body>
+</html>
