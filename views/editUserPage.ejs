@@ -1,22 +1,35 @@
 <html>
     <head>
+        <script>
+            funcCheckViewSub=()=>{
+             
+                document.getElementById("view_subscriptions").checked=true
+            }
+            funcCheckViewMovies=()=>{
+                document.getElementById("view_movies").checked=true
+            }
+        </script>
         </head>
         <body>
             <h1>edit user page</h1>
-            <form action="#">
-               FirstName: <input type="text" value="<%=data.FirstName %>"/><br/>
-               LastName:<input type="text" value="<%=data.LastName %>"/><br/>
-               CreatedDate:<input type="text" value="<%=data.CreatedDate %>"><br/>
-               SessionTimeOut:<input type="text" value="<%=data.SessionTimeOut %>"><br/>
+            <form action="updateUser" method="POST">
+                 <input type="hidden" name="id" value="<%=data.id %>"/><br/>
+               FirstName: <input type="text" name="fname" value="<%=data.FirstName %>"/><br/>
+               LastName:<input type="text" name="lstname" value="<%=data.LastName %>"/><br/>
+               CreatedDate:<input type="text" name="created_date" value="<%=data.CreatedDate %>"><br/>
+               SessionTimeOut:<input type="text" name="session_timeout" value="<%=data.SessionTimeOut %>"><br/>
                Permissions:
-                   <input type="checkbox" >View Subscription
-                   <input type="checkbox"  > Create Subscriptions
-                   <input type="checkbox"  >Delete Subscriptions
-                   <input type="checkbox"  >View Movies
-                   <input type="checkbox"  >Create Movies
-                   <input type="checkbox"  >Delete Movies
+               <div class="myinputs"style="display: grid;">
+                <label>  <input type="checkbox" id="view_subscriptions"  name="View_Subscription" value="View Subscription" >View Subscription </label> 
+                <label>  <input type="checkbox" id="create_subscriptions" name="Create_Subscriptions" value="Create Subscriptions" onclick="funcCheckViewSub()" > Create Subscriptions </label> 
+              <label> <input type="checkbox" id="delete_subscriptions"  name="Delete_Subscriptions" value="Delete Subscriptions" onclick="funcCheckViewSub()">Delete Subscriptions</label>  
+              <label> <input type="checkbox" id="update"   name="Update_Subscription" value="Update Subscription" onclick="funcCheckViewSub()">Update Subscriptions</label>  
+                <label><input type="checkbox" id="view_movies" name="View_Movies"  value="View Movies" >View Movies </label>
+                <label><input type="checkbox" id="create_movies"  name="Create_Movies"  value="Create Movies" onclick="funcCheckViewMovies()"  > Create Movies </label>
+                    <label> <input type="checkbox" id="delete_movies"  name="Delete_Movies"  value="Delete Movies" onclick="funcCheckViewMovies()"  > Delete Movies </label> 
+                    <label> <input type="checkbox" id="update_movies"  name="Update_Movie"    value="Update Movie" onclick="funcCheckViewMovies()" > Update Movies </label> 
                   
-             
+             </div>
                <div>
                <input type="submit" value="Update">
                <a href="#" value="Go back">Go Back</a>
@@ -29,3 +42,4 @@
             </body>
     </html>
 
+    

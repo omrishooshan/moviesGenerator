@@ -1,6 +1,39 @@
+
+
 <html>
-    <body>
-        <%- include('usersPage')%>
-        <h2>add users page work</h2>
-        </body>
-</html>
+    <head>
+        </head>
+        <body>
+            <%- include('usersPage')%>
+            <h1>Add user page</h1>
+            <form action="addUsers" method="POST">
+                 <input type="hidden" name="id" /><br/>
+               FirstName: <input type="text" name="fname" /><br/>
+               LastName:<input type="text" name="lstname" /><br/>
+               CreatedDate:<input type="text" name="created_date" ><br/>
+               SessionTimeOut:<input type="text" name="session_timeout"><br/>
+               Permissions:
+               <div class="myinputs"style="display: grid;">
+                <label>  <input type="checkbox" id="view_subscriptions"  name="View_Subscription" value="View Subscription" >View Subscription </label> 
+                <label>  <input type="checkbox" id="create_subscriptions" name="Create_Subscriptions" value="Create Subscriptions" > Create Subscriptions </label> 
+              <label> <input type="checkbox" id="delete_subscriptions"  name="Delete_Subscriptions" value="Delete Subscriptions">Delete Subscriptions</label>  
+              <label> <input type="checkbox" id="update"   name="Update_Subscription" value="Update Subscription" >Update Subscriptions</label>  
+                <label><input type="checkbox" id="view_movies" name="View_Movies"  value="View Movies" >View Movies </label>
+                <label><input type="checkbox" id="create_movies"  name="Create_Movies"  value="Create Movies"  > Create Movies </label>
+                    <label> <input type="checkbox" id="delete_movies"  name="Delete_Movies"  value="Delete Movies" > Delete Movies </label> 
+                    <label> <input type="checkbox" id="update_movies"  name="Update_Movie"    value="Update Movie"  > Update Movies </label> 
+                  
+             </div>
+               <div>
+               <input type="submit" value="Update">
+               <a href="#" value="Go back">Go Back</a>
+               
+               </div>
+              </form>
+
+          
+      
+            </body>
+    </html>
+
+    

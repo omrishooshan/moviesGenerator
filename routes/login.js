@@ -1,15 +1,30 @@
-/*1 – Login Page
-The home page of the system. A page with username & password text box and a “Login” button. A
-successful log in redirect to “Main” Page. A failed attempt will present a proper message in the same
-page (Login page).
-Once a user logged in – his name will be presented in all the site pages
-First time users (which don’t have password yet) will click on “create account” link which will redirect
-them to a “CretaeAccount” page*/
+
 let express= require('express')
 let router = express.Router()
+let Users = require('../Model/usersModel')
 
 router.get('/',function(req,res,next){
-       res.render('login')
+       res.render('login',{alert: false})
+})
+
+router.post('/',function(req,resp){
+       
+       Users.find({},(err,users)=>{
+           if(err){console.log(err)}
+           else{
+              
+                  let myUsers= users
+                  let IsUserHere=myUsers.filter(x=> x.UserName == req.body.username && x.Password == req.body.password)[0]
+                  let userId=IsUserHere.id
+                  if(IsUserHere === undefined){
+                           resp.render('login',{alert: true})
+                  }
+                  else{
+                        
+                        resp.redirect('/main')
+                  }
+           }
+       })
 })
 
 router.get('/CreateAccount',function(req,resp,next){

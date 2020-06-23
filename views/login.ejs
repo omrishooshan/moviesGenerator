@@ -1,14 +1,29 @@
 <html>
-    <body>
+    <head>
+        <script>
+            
+        checkAlert=(alert)=>{
+           
+        if(alert.toString() == "true"){
+            console.log("test")
+            document.getElementById("warning").style.display = "block"
+        }
+       
+        }
+        </script>
+    </head>
+    <body onload="checkAlert('<%= alert%>')">
         <h1>Movies- subscriptions web site</h1>
         <h3>Log in Page</h3>
-        <form action="userValidation">
+        <form method="POST" action="login">
         <label>User Name:</label><input type="text" name="username">
         <br>
         <label>Password:</label><input type="text" name="password">
         <br>
+        <span id="warning" style="color:red ;display:none">THERE IS NO SUCH USER, PLEASE CHECK YOUR CREDENTIALS AGAIN</span><br>
         <input type="submit" value="Login">
         <h3>New User?</h3><a href="/login/CreateAccount" >Create Account</a>
         </form>
+        
         </body>
     </html>
